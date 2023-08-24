@@ -1,9 +1,11 @@
 const mongoose = require('mongoose');
 const { countConnect } = require('../helpers/check.connect');
+const config =  require('../configs/config.mongodb')
 
 class Database {
 
 	constructor() {
+		console.log('config', config);
 		this.connect();
 	}
 
@@ -12,7 +14,7 @@ class Database {
 			mongoose.set('debug', true);
 			mongoose.set('debug', { color: true })
 		}
-		mongoose.connect('mongodb://127.0.0.1:27017/shopDEV')
+		mongoose.connect(`mongodb://${config.db.host}/${config.db.name}`)
 		.then(() => {
 				console.log('Database connection successful', countConnect())
 			})
