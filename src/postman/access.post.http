@@ -1,12 +1,61 @@
 @url_dev = http://localhost:3055/v1/api
-### signup
 
-POST {{url_dev}}/shop/signup
+
+### signin
+POST {{url_dev}}/shop/login
 Content-Type: application/json
-x-api-key: 4ef327ac1353eb3bec015458f7bc178c
+x-api-key: 03c76e7d5612d804dae46b28e8b66c040b2c6574f94608b53be992d7d6582597dd2def933bbf2dae54c3e4d74b529fb9c2753c6d31dbcc0e2ac1578398d94d17
 
 {
-	"name": "Hau7",
-	"email": "hau7@gmail.com",
+	"email": "hau@gmail.com",
 	"password": "123456"
+}
+
+### signup
+POST {{url_dev}}/shop/signup
+Content-Type: application/json
+x-api-key: 03c76e7d5612d804dae46b28e8b66c040b2c6574f94608b53be992d7d6582597dd2def933bbf2dae54c3e4d74b529fb9c2753c6d31dbcc0e2ac1578398d94d17
+
+{
+	"name": "Hau",
+	"email": "hau@gmail.com",
+	"password": "123456"
+}
+
+###
+POST {{url_dev}}/shop/logout
+Content-Type: application/json
+x-api-key: 03c76e7d5612d804dae46b28e8b66c040b2c6574f94608b53be992d7d6582597dd2def933bbf2dae54c3e4d74b529fb9c2753c6d31dbcc0e2ac1578398d94d17
+x-client-id: 64e84596784860cbe9668427
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGU4NDU5Njc4NDg2MGNiZTk2Njg0MjciLCJlbWFpbCI6ImhhdUBnbWFpbC5jb20iLCJpYXQiOjE2OTMxMjEzNzYsImV4cCI6MTY5MzEyNDk3Nn0.N0hzsuODWwrx5OxZW6DqTwSMiW8RM3F91LtT76J_SWA
+
+###
+###
+POST {{url_dev}}/shop/refresh-token
+Content-Type: application/json
+x-api-key: 03c76e7d5612d804dae46b28e8b66c040b2c6574f94608b53be992d7d6582597dd2def933bbf2dae54c3e4d74b529fb9c2753c6d31dbcc0e2ac1578398d94d17
+x-client-id: 64e84596784860cbe9668427
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGU4NDU5Njc4NDg2MGNiZTk2Njg0MjciLCJlbWFpbCI6ImhhdUBnbWFpbC5jb20iLCJpYXQiOjE2OTMwNjE1NDcsImV4cCI6MTY5MzA2NTE0N30.09811GMVJk4MEz-pkIAT0CmWfcp-HCDxEcC-7AIph40
+x-rtoken-id: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGU4NDU5Njc4NDg2MGNiZTk2Njg0MjciLCJlbWFpbCI6ImhhdUBnbWFpbC5jb20iLCJpYXQiOjE2OTMxMTk4NzQsImV4cCI6MTY5MzIwNjI3NH0.KXz3y0FfnlM6J0oEVro2dKgzoaJN7sFkqEmEkdbcq9Q
+
+##################### PRODUCT
+### create product
+POST {{url_dev}}/product
+Content-Type: application/json
+x-api-key: 03c76e7d5612d804dae46b28e8b66c040b2c6574f94608b53be992d7d6582597dd2def933bbf2dae54c3e4d74b529fb9c2753c6d31dbcc0e2ac1578398d94d17
+x-client-id: 64e84596784860cbe9668427
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGU4NDU5Njc4NDg2MGNiZTk2Njg0MjciLCJlbWFpbCI6ImhhdUBnbWFpbC5jb20iLCJpYXQiOjE2OTMxMjc3NTgsImV4cCI6MTY5MzEzMTM1OH0.Ltpw3yyysiDwI68tY7DzEDxRHhFaZmSV_8PMgCLYHFA
+
+{
+	"product_name": "Furniture",
+	"product_description": "New Furniture",
+	"product_price": 100,
+	"product_quantity": 100,
+	"product_type": "Furniture",
+	"product_thumb": "product_thumb",
+	"product_attributes": {
+		"brand": "Furniture Levis",
+		"size": "Furniture L",
+		"meterial": "Furniture Demin"
+	}
 }

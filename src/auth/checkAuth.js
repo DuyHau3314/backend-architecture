@@ -1,16 +1,23 @@
 const { ForbiddenError } = require('../core/error/error.response');
+const asyncHandle = require('../helpers/asyncHandler');
+const apikeyModel = require('../models/apikey.model');
 const { findById } = require('../services/apikey.service');
+const crypto = require('node:crypto');
+
 const HEADER = {
     API_KEY: 'x-api-key',
     AUTHORIZATION: 'authorization',
 };
 
-const asyncHandle = (fn) => (req, res, next) => {
-    Promise.resolve(fn(req, res, next)).catch(next);
-}
-
 const apiKey = asyncHandle(async (req, res, next) => {
-    const key = req.headers[HEADER.API_KEY].toString();
+    const key = req.headers[HEADER.API_KEY];
+
+    // create api key
+    // const apiKey =  await apikeyModel.create({
+    //     key: crypto.randomBytes(64).toString('hex'),
+    //     permissions: ['0000'],
+    //     status: true,
+    // })
 
     if (!key) {
         return res.status(403).json({
