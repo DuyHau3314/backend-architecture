@@ -83,6 +83,16 @@ x-api-key: 03c76e7d5612d804dae46b28e8b66c040b2c6574f94608b53be992d7d6582597dd2de
 x-client-id: 64e84596784860cbe9668427
 authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGU4NDU5Njc4NDg2MGNiZTk2Njg0MjciLCJlbWFpbCI6ImhhdUBnbWFpbC5jb20iLCJpYXQiOjE2OTMyMjAyMzEsImV4cCI6MTcyNDc3NzgzMX0.5RbEDO3UBJiaTIlx6sDKj55rcMAp38OGvWbKZwgy8uo
 
+### Get all products
+GET {{url_dev}}/product
+Content-Type: application/json
+x-api-key: 03c76e7d5612d804dae46b28e8b66c040b2c6574f94608b53be992d7d6582597dd2def933bbf2dae54c3e4d74b529fb9c2753c6d31dbcc0e2ac1578398d94d17
+
+### Get product by id
+GET {{url_dev}}/product/{{product_id}}
+Content-Type: application/json
+x-api-key: 03c76e7d5612d804dae46b28e8b66c040b2c6574f94608b53be992d7d6582597dd2def933bbf2dae54c3e4d74b529fb9c2753c6d31dbcc0e2ac1578398d94d17
+
 ### Get products by published
 GET {{url_dev}}/product/published/all
 Content-Type: application/json

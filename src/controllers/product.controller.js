@@ -64,6 +64,20 @@ class ProductController {
 			}),
 		}).send(res);
 	}
+
+	getAllProducts = async (req, res, next) => {
+		return new OK({
+			message: 'Get all products success!',
+			metadata: await ProductFactoryV2.finAllProducts(req.query),
+		}).send(res);
+	}
+
+	getProduct = async (req, res, next) => {
+		return new OK({
+			message: 'Get product success!',
+			metadata: await ProductFactoryV2.findProduct({product_id: req.params.product_id}),
+		}).send(res);
+	}
 }
 
 module.exports = new ProductController();

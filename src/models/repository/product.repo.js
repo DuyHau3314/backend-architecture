@@ -5,6 +5,7 @@ const {
     clothing,
     furniture,
 } = require('../../models/product.model');
+const { getSelectData, getUnSelectData } = require('../../utils');
 
 const findAllProductsForShop = async ({ query, limit, skip }) => {
     return await product
@@ -71,9 +72,28 @@ const searchProductByUser = async ({ limit, skip, keySearch }) => {
 	return result;
 };
 
+const findAllProducts = async ({ limit, sort, page, filter, select }) => {
+    const skip = (page - 1) * limit;
+    const sortBy = sort === 'ctime' ? { _id: -1 } : { _id: 1 };
+
+    const products = await product.find(filter).sort(sortBy).skip(skip).limit(limit).select(getSelectData(select)).lean().exec();
+
+    return products;
+}
+
+const findProduct = async ({ product_id, unSelect }) => {
+    const foundProduct = await product.findOne({ _id: product_id }).select(getUnSelectData(unSelect)).lean().exec();
+
+    if (!foundProduct) throw new BadRequestError('Product not found');
+
+    return foundProduct;
+}
+
 module.exports = {
     findAllProductsForShop,
     publishProductByShop,
     unpublishProductByShop,
-	searchProductByUser
+	searchProductByUser,
+    findAllProducts,
+    findProduct,
 };
