@@ -14,12 +14,12 @@ const createTokenPair = async (payload, publicKey, privateKey) => {
 	try {
 		// create accessToken
 		const accessToken = await JWT.sign(payload, publicKey, {
-			expiresIn: '1h',
+			expiresIn: '1y',
 		});
 
 		// create refreshToken
 		const refreshToken = await JWT.sign(payload, privateKey, {
-			expiresIn: '1d',
+			expiresIn: '10y',
 		});
 
 		return {
