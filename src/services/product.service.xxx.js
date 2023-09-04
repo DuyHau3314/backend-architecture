@@ -58,7 +58,7 @@ class ProductFactory {
 		return await searchProductByUser({limit, skip, keySearch});
 	}
 
-	static async finAllProducts({limit =50, sort = 'ctime', page = 1, filter = { isPublished: true},  select = ['product_name', 'product_price', 'product_thumb']}) {
+	static async finAllProducts({limit =50, sort = 'ctime', page = 1, filter = { isPublished: true},  select = ['product_name', 'product_price', 'product_thumb', 'product_shop']}) {
 		return await findAllProducts({limit, sort, page, filter, select});
 	}
 
