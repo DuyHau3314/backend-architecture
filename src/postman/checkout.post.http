@@ -1,0 +1,32 @@
+@url_dev = http://localhost:3055/v1/api
+
+### Checkout review
+POST {{url_dev}}/checkout/review
+Content-Type: application/json
+x-api-key: 03c76e7d5612d804dae46b28e8b66c040b2c6574f94608b53be992d7d6582597dd2def933bbf2dae54c3e4d74b529fb9c2753c6d31dbcc0e2ac1578398d94d17
+x-client-id: 64e84596784860cbe9668427
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGU4NDU5Njc4NDg2MGNiZTk2Njg0MjciLCJlbWFpbCI6ImhhdUBnbWFpbC5jb20iLCJpYXQiOjE2OTMyMjAyMzEsImV4cCI6MTcyNDc3NzgzMX0.5RbEDO3UBJiaTIlx6sDKj55rcMAp38OGvWbKZwgy8uo
+
+{
+	"userId": 1001,
+	"cartId": "64f5393348858aec00f9b541",
+	"shop_order_ids": [
+		{
+			"shop_id": "64e84596784860cbe9668427",
+			"shop_discounts": [
+				{
+					"shop_id": "64e84596784860cbe9668427",
+					"discount_id": "64f2af87b39df337eadb3c28",
+					"code": "SHOP-1133"
+				}
+			],
+			"item_products": [
+				{
+					"price": 100,
+					"quantity": 100,
+					"product_id": "64ec74cd7a4ac475dd90bd2c"
+				}
+			]
+		}
+	]
+}

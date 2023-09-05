@@ -97,6 +97,23 @@ const  getProductById = async (productId) => {
     return await product.findById(productId).lean().exec();
 }
 
+const checkProductByServer = async (products) => {
+    console.log("==========products", products);
+    return await Promise.all(products.map(async (p) => {
+        const foundProduct = await product.findById(p.product_id).lean().exec();
+
+        if(foundProduct){
+            return {
+                price: foundProduct.product_price,
+                quantity: product.quantity,
+                productId: product.productId,
+            }
+        }
+
+        return null;
+    }))
+}
+
 module.exports = {
     findAllProductsForShop,
     publishProductByShop,
@@ -105,5 +122,6 @@ module.exports = {
     findAllProducts,
     findProduct,
     updateProductById,
-    getProductById
+    getProductById,
+    checkProductByServer
 };
