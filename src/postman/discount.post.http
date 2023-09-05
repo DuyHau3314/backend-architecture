@@ -7,12 +7,12 @@ x-client-id: 64e84596784860cbe9668427
 authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGU4NDU5Njc4NDg2MGNiZTk2Njg0MjciLCJlbWFpbCI6ImhhdUBnbWFpbC5jb20iLCJpYXQiOjE2OTMyMjAyMzEsImV4cCI6MTcyNDc3NzgzMX0.5RbEDO3UBJiaTIlx6sDKj55rcMAp38OGvWbKZwgy8uo
 
 {
-	"name": "name percentage",
-	"description": "description fixed amount",
+	"name": "Furiture slay",
+	"description": "description",
 	"type": "percentage",
 	"value": 10,
-	"max_value": 300000,
-	"code": "SHOP-1133",
+	"max_value": 50,
+	"code": "SHOP-1111",
 	"start_date": "2024-06-01 09:00:00",
 	"end_date": "2024-06-30 09:00:00",
 	"max_uses": 100,
@@ -23,11 +23,11 @@ authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGU4NDU5Njc4
 	"created_by": {},
 	"is_active": true,
 	"applies_to": "specific",
-	"product_ids": ["64ec6b2ab66e1ec4f5ea0cce"]
+	"product_ids": ["64ec74f2b401c686794f9d58"]
 }
 
 ### Get list_product_code
-GET {{url_dev}}/discount/list_product_code?code=SHOP-1122&shopId=64e84596784860cbe9668427&limit=10&page=1
+GET {{url_dev}}/discount/list_product_code?code=SHOP-1111&shopId=64e84596784860cbe9668427&limit=10&page=1
 Content-Type: application/json
 x-api-key: 03c76e7d5612d804dae46b28e8b66c040b2c6574f94608b53be992d7d6582597dd2def933bbf2dae54c3e4d74b529fb9c2753c6d31dbcc0e2ac1578398d94d17
 

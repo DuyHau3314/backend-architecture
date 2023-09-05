@@ -16,8 +16,8 @@ authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGU4NDU5Njc4
 			"shop_discounts": [
 				{
 					"shop_id": "64e84596784860cbe9668427",
-					"discount_id": "64f2af87b39df337eadb3c28",
-					"code": "SHOP-1133"
+					"discount_id": "64ec74f2b401c686794f9d58",
+					"code": "SHOP-1111"
 				}
 			],
 			"item_products": [

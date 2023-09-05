@@ -86,7 +86,7 @@ class CheckoutService {
 
 			// if shop_discounts exist > 0, check valid discount or not
 			if(shop_discounts.length > 0) {
-				const { totalPrice, discount = 0 } =  await DiscountService.getDiscountAmount({
+				const { totalPrice = 0, discount = 0 } =  await DiscountService.getDiscountAmount({
 					code: shop_discounts[0].code,
 					userId,
 					shopId: shop_id,
